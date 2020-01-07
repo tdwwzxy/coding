@@ -4,6 +4,9 @@
 spring boot demo
 input a string of "2-9", output all letter combinations
 
+#### test case
+http://localhost:8080/first/api?digits=23
+
 #### Software Architecture
 Software architecture description
 

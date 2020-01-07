@@ -4,6 +4,9 @@
 spring boot 的demo
 输入一个"2-9"的字符串，输出所有字母组合
 
+#### 测试用例
+http://localhost:8080/first/api?digits=23
+
 #### 软件架构
 软件架构说明：
 简单微服务
