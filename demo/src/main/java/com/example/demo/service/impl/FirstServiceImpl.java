@@ -1,22 +1,21 @@
-import org.apache.commons.lang3.StringUtils;
+package com.example.demo.service.impl;
+
+import com.example.demo.service.IFirstService;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("please input a string of 2-9： ");
-        while (scanner.hasNext()) {
-            String digits = scanner.nextLine();
-            List<String> list = letterCombinations(digits);
-            System.out.println(list.isEmpty() ? ">>>input error: please input a string of 2-9:" : list.toString());
-        }
-    }
+/**
+ * Created by Zheng Wencai on 2020-1-7.
+ */
+@Service
+public class FirstServiceImpl implements IFirstService {
 
-    public static List<String> letterCombinations(String digits) {
+    public List<String> letterCombinations(String digits) {
+        //check input
         if(StringUtils.isEmpty(digits)){
             return Collections.emptyList();
         }
@@ -26,8 +25,8 @@ public class Main {
             }
         }
 
-        // recursion
-       String[] allLetters = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        // execute recursion
+        String[] allLetters = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         List<String> returnList = new ArrayList<>();
         char[] chars = digits.toCharArray();
         for(char c : allLetters[chars[0] - '0'].toCharArray()){
